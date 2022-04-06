@@ -60,8 +60,6 @@ public static void main(String[] args) throws IOException{
                 }
                 dos.writeUTF(inline);
             }
-            else
-                dos.writeUTF("Nhập từ 1 - 10");
         }
 
     }

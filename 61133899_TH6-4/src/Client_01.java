@@ -14,6 +14,7 @@ public class Client_01{
         try {
 
             mySocket = new Socket("localhost", 8888);
+            System.out.print("Client 8888 ss\n");
             dos = new DataOutputStream(mySocket.getOutputStream());
             dis = new DataInputStream(mySocket.getInputStream());
             Scanner input = new Scanner(System.in);
