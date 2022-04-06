@@ -14,7 +14,7 @@ public static void main(String[] args) throws IOException{
     DataInputStream dis=null;
     try {
         serverSocket = new ServerSocket(8888);
-        System.out.print("Server ss\n" );
+        System.out.print("Server 8888 ss\n" );
         Socket clientSocket = null;
         clientSocket = serverSocket.accept();
         dos=new DataOutputStream(clientSocket.getOutputStream());
@@ -28,12 +28,8 @@ public static void main(String[] args) throws IOException{
             if(Character.isDigit(ch[0]))
                 {
                 int i=Integer.parseInt(inline);
-                Scanner sc = new Scanner(System.in);
-                String rep = sc.next();
-                if (rep.equalsIgnoreCase("0")) {
-					System.out.println("---Phiên kết thúc---");
-					break;
-				}
+                
+                
                 switch(i)
                 {
                     
@@ -57,9 +53,12 @@ public static void main(String[] args) throws IOException{
                     break;
                     case 10:inline="10.txt";
                     break;  
+                    case 0: inline= "---Phiên kết thúc---";
+            				break;
                 }
                 dos.writeUTF(inline);
             }
+           
         }
 
     }

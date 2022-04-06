@@ -10,7 +10,7 @@ public class Client_01{
         Socket mySocket = null;
         DataOutputStream dos = null;
         DataInputStream dis=null;
-
+        Scanner sc = new Scanner(System.in);
         try {
 
             mySocket = new Socket("localhost", 8888);
@@ -27,6 +27,12 @@ public class Client_01{
                
                 String str=dis.readUTF();
                 System.out.print("Server : "+str);
+                
+                String rep = sc.next();
+				if (rep.equalsIgnoreCase("0")) {
+					System.out.println("---Chương trình kết thúc---");
+					break;
+				}
                 
             }
         }
